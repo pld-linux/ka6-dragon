@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	24.02.1
+%define		kdeappsver	24.02.2
 %define		kframever	5.94.0
 %define		qtver		5.15.2
 %define		kaname		dragon
 Summary:	Dragon Player
 Name:		ka6-%{kaname}
-Version:	24.02.1
+Version:	24.02.2
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Applications/Multimedia
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	d11edc1c5af3acddcb68acb1f3fb5515
+# Source0-md5:	2ecb7104b95c7044c9156c3e687f3422
 URL:		http://www.kde.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	Qt6Gui-devel >= 5.11.1
@@ -90,19 +90,12 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/dragon
 %attr(755,root,root) %{_libdir}/qt6/plugins/kf6/parts/dragonpart.so
 %{_desktopdir}/org.kde.dragonplayer.desktop
-%{_iconsdir}/hicolor/128x128/apps/dragonplayer.png
-%{_iconsdir}/hicolor/16x16/apps/dragonplayer.png
-%{_iconsdir}/hicolor/22x22/apps/dragonplayer.png
-%{_iconsdir}/hicolor/32x32/apps/dragonplayer.png
-%{_iconsdir}/hicolor/48x48/apps/dragonplayer.png
-%{_iconsdir}/hicolor/64x64/apps/dragonplayer.png
+%{_iconsdir}/hicolor/*x*/apps/dragonplayer.png
 %{_iconsdir}/hicolor/scalable/apps/dragonplayer.svgz
-%{_iconsdir}/oxygen/16x16/actions/player-volume-muted.png
-%{_iconsdir}/oxygen/22x22/actions/player-volume-muted.png
-%{_iconsdir}/oxygen/32x32/actions/player-volume-muted.png
-%{_iconsdir}/oxygen/48x48/actions/player-volume-muted.png
+%{_iconsdir}/oxygen/*x*/actions/player-volume-muted.png
 %{_iconsdir}/oxygen/scalable/actions/player-volume-muted.svgz
 %{_datadir}/kio/servicemenus/dragonplayer_play_dvd.desktop
+%{_mandir}/man1/dragon.1*
 %{_mandir}/ca/man1/dragon.1*
 %{_mandir}/de/man1/dragon.1*
 %{_mandir}/es/man1/dragon.1*
