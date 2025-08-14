@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	25.04.3
+%define		kdeappsver	25.08.0
 %define		kframever	5.94.0
 %define		qtver		5.15.2
 %define		kaname		dragon
 Summary:	Dragon Player
 Name:		ka6-%{kaname}
-Version:	25.04.3
+Version:	25.08.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Applications/Multimedia
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	930b4c6023d13882e4993abcec8d7f28
+# Source0-md5:	1ae020053f106475da2b121208e3aff3
 URL:		http://www.kde.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	Qt6Gui-devel >= 5.11.1
@@ -94,31 +94,21 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{kaname}.lang
 %defattr(644,root,root,755)
-/etc/xdg/dragonplayerrc
 %attr(755,root,root) %{_bindir}/dragon
-%attr(755,root,root) %{_libdir}/qt6/plugins/kf6/parts/dragonpart.so
+%dir %{_libdir}/qt6/qml/org/kde/dragon
+%{_libdir}/qt6/qml/org/kde/dragon/AboutPage.qml
+%{_libdir}/qt6/qml/org/kde/dragon/ControlsBar.qml
+%{_libdir}/qt6/qml/org/kde/dragon/IconToolButton.qml
+%{_libdir}/qt6/qml/org/kde/dragon/Main.qml
+%{_libdir}/qt6/qml/org/kde/dragon/OverlayPopup.qml
+%{_libdir}/qt6/qml/org/kde/dragon/PlayerPage.qml
+%{_libdir}/qt6/qml/org/kde/dragon/VolumeButton.qml
+%{_libdir}/qt6/qml/org/kde/dragon/WelcomeView.qml
+%{_libdir}/qt6/qml/org/kde/dragon/dragonmodule.qmltypes
+%{_libdir}/qt6/qml/org/kde/dragon/kde-qmlmodule.version
+%attr(755,root,root) %{_libdir}/qt6/qml/org/kde/dragon/libdragonmodule.so
+%{_libdir}/qt6/qml/org/kde/dragon/qmldir
 %{_desktopdir}/org.kde.dragonplayer.desktop
 %{_iconsdir}/hicolor/*x*/apps/dragonplayer.png
 %{_iconsdir}/hicolor/scalable/apps/dragonplayer.svgz
-%{_iconsdir}/oxygen/*x*/actions/player-volume-muted.png
-%{_iconsdir}/oxygen/scalable/actions/player-volume-muted.svgz
-%{_datadir}/kio/servicemenus/dragonplayer_play_dvd.desktop
-%{_mandir}/man1/dragon.1*
-%{_mandir}/ca/man1/dragon.1*
-%{_mandir}/de/man1/dragon.1*
-%{_mandir}/es/man1/dragon.1*
-%{_mandir}/et/man1/dragon.1*
-%{_mandir}/fr/man1/dragon.1*
-%{_mandir}/it/man1/dragon.1*
-%{_mandir}/nl/man1/dragon.1*
-%{_mandir}/pt/man1/dragon.1*
-%{_mandir}/pt_BR/man1/dragon.1*
-%{_mandir}/sl/man1/dragon.1*
-%{_mandir}/sr/man1/dragon.1*
-%{_mandir}/sr@latin/man1/dragon.1*
-%{_mandir}/sv/man1/dragon.1*
-%{_mandir}/tr/man1/dragon.1*
-%{_mandir}/uk/man1/dragon.1*
 %{_datadir}/metainfo/org.kde.dragonplayer.appdata.xml
-%{_datadir}/solid/actions/dragonplayer-openaudiocd.desktop
-%{_datadir}/solid/actions/dragonplayer-opendvd.desktop
