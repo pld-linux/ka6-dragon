@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	25.08.2
+%define		kdeappsver	25.08.3
 %define		kframever	5.94.0
 %define		qtver		5.15.2
 %define		kaname		dragon
 Summary:	Dragon Player
 Name:		ka6-%{kaname}
-Version:	25.08.2
-Release:	2
+Version:	25.08.3
+Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Applications/Multimedia
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	a669094139d307c3518f6655e06a75ad
+# Source0-md5:	3228ea2d35fea0133afc904a9485d348
 URL:		http://www.kde.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	Qt6Gui-devel >= 5.11.1
@@ -107,7 +107,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/qt6/qml/org/kde/dragon/WelcomeView.qml
 %{_libdir}/qt6/qml/org/kde/dragon/dragonmodule.qmltypes
 %{_libdir}/qt6/qml/org/kde/dragon/kde-qmlmodule.version
-%attr(755,root,root) %{_libdir}/qt6/qml/org/kde/dragon/libdragonmodule.so
+%{_libdir}/qt6/qml/org/kde/dragon/libdragonmodule.so
 %{_libdir}/qt6/qml/org/kde/dragon/qmldir
 %{_desktopdir}/org.kde.dragonplayer.desktop
 %{_iconsdir}/hicolor/*x*/apps/dragonplayer.png
