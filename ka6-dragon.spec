@@ -6,6 +6,7 @@
 %define		qtver		5.15.2
 %define		kaname		dragon
 Summary:	Dragon Player
+Summary(pl.UTF-8): Odtwarzacz Dragon
 Name:		ka6-%{kaname}
 Version:	26.04.1
 Release:	1
